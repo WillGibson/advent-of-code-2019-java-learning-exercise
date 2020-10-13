@@ -10,6 +10,4 @@ I used the following:
 
 ## The exercises
 
-### [Day 01](https://adventofcode.com/2019/day/1)
-
-Run `mvn spring-boot:run` in your terminal, the fuel required (for my data) will be output at the end of the console output.
+Run `mvn spring-boot:run` in your terminal, the answers will be in the console output.

@@ -1,4 +1,4 @@
-package com.willgibson.adventofcode2019javalearningexercise.day01;
+package com.willgibson.adventofcode2019javalearningexercise.day01part1;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -8,8 +8,6 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 import java.io.FileNotFoundException;
 import java.io.FileReader;
-import java.lang.reflect.Array;
-import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Scanner;
 
@@ -25,10 +23,10 @@ public class FuelCounterUpper implements CommandLineRunner {
     @Override
     public void run(String... args) throws FileNotFoundException {
         Scanner scanner = new Scanner(new FileReader(
-            "src/main/java/com/willgibson/adventofcode2019javalearningexercise/day01/inputData.txt"
+            "src/main/java/com/willgibson/adventofcode2019javalearningexercise/day01part1/inputData.txt"
         ));
         int[] stars = putInputDataIntoArray(scanner, new int[]{});
-        LOG.info("The fuel required is " + calculate(stars));
+        LOG.info("Day 01, Part 1 - The fuel required is " + calculate(stars));
     }
 
     private int[] putInputDataIntoArray(Scanner scanner, int[] starsSoFar) {

@@ -1,4 +1,4 @@
-package com.willgibson.adventofcode2019javalearningexercise.day01;
+package com.willgibson.adventofcode2019javalearningexercise.day01part1;
 
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
