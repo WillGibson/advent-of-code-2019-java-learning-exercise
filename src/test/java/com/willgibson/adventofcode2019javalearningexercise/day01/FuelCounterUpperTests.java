@@ -31,4 +31,10 @@ class FuelCounterUpperTests {
         int[] stars = {1969};
         assertThat(fuelCounterUpper.calculate(stars)).isEqualTo(654);
     }
+
+    @Test
+    void calculate_With100756_Returns33583() {
+        int[] stars = {100756};
+        assertThat(fuelCounterUpper.calculate(stars)).isEqualTo(33583);
+    }
 }
