@@ -16,6 +16,10 @@ public class FuelCounterUpper {
         return iterate(stars, 0);
     }
 
+    private int fuelNeeded(int star) {
+        return ((star / 3) - 2);
+    }
+
     private int iterate(int[] stars, int accumulator) {
         if (stars.length == 0) return accumulator;
         else {
@@ -24,9 +28,5 @@ public class FuelCounterUpper {
                 (accumulator + fuelNeeded(stars[0]))
             );
         }
-    }
-
-    private int fuelNeeded(int star) {
-        return ((star / 3) - 2);
     }
 }
