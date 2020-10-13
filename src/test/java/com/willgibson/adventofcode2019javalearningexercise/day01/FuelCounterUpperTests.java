@@ -20,4 +20,9 @@ class FuelCounterUpperTests {
         assertThat(fuelCounterUpper.calculate(stars)).isEqualTo(2);
     }
 
+    @Test
+    void fuelCounterUpper_With14_Returns2() {
+        int[] stars = {14};
+        assertThat(fuelCounterUpper.calculate(stars)).isEqualTo(2);
+    }
 }
