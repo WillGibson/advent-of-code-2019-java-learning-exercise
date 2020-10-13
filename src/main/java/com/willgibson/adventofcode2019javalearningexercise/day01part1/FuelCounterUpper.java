@@ -29,6 +29,7 @@ public class FuelCounterUpper implements CommandLineRunner {
         LOG.info("Day 01, Part 1 - The fuel required is " + calculate(stars));
     }
 
+    // Todo: Refactor this spike to putFileLineDataIntoIntegerArray and test it
     private int[] putInputDataIntoArray(Scanner scanner, int[] starsSoFar) {
         if (!scanner.hasNext()) return starsSoFar;
         else {
