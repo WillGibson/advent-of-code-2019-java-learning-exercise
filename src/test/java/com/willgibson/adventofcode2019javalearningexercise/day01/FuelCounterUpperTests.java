@@ -15,14 +15,20 @@ class FuelCounterUpperTests {
     }
 
     @Test
-    void fuelCounterUpper_With12_Returns2() {
+    void calculate_With12_Returns2() {
         int[] stars = {12};
         assertThat(fuelCounterUpper.calculate(stars)).isEqualTo(2);
     }
 
     @Test
-    void fuelCounterUpper_With14_Returns2() {
+    void calculate_With14_Returns2() {
         int[] stars = {14};
         assertThat(fuelCounterUpper.calculate(stars)).isEqualTo(2);
+    }
+
+    @Test
+    void calculate_With1969_Returns654() {
+        int[] stars = {1969};
+        assertThat(fuelCounterUpper.calculate(stars)).isEqualTo(654);
     }
 }
