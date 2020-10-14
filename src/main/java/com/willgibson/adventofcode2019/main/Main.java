@@ -28,7 +28,7 @@ public class Main implements CommandLineRunner {
         FuelCounterUpperPart2 fuelCounterUpperPart2 = new FuelCounterUpperPart2();
 
         int[] stars = fromTextFile.integerPerLineToArray(
-            Config.pathToBasePackage + "day01/inputData.txt"
+            Config.pathToBasePackage + "day01/input.txt"
         );
         log.info("Day 01, Part 1 - The fuel required is " + fuelCounterUpperPart1.calculate(stars));
         log.info("Day 01, Part 2 - The fuel required is " + fuelCounterUpperPart2.calculate(stars));
