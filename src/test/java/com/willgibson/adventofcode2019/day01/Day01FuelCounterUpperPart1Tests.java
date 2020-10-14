@@ -5,7 +5,7 @@ import org.junit.jupiter.api.Test;
 
 import static org.assertj.core.api.Assertions.assertThat;
 
-class Day01Part1FuelCounterUpperPart1Tests {
+class Day01FuelCounterUpperPart1Tests {
 
     private FuelCounterUpperPart1 fuelCounterUpper;
 
