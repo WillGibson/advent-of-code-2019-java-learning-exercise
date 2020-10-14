@@ -1,17 +1,17 @@
-package com.willgibson.adventofcode2019javalearningexercise.day01.part2;
+package com.willgibson.adventofcode2019javalearningexercise.day01;
 
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
 import static org.assertj.core.api.Assertions.assertThat;
 
-class Day01Part2FuelCounterUpperTests {
+class Day01Part2FuelCounterUpperPart2Tests {
 
-    private FuelCounterUpper fuelCounterUpper;
+    private FuelCounterUpperPart2 fuelCounterUpper;
 
     @BeforeEach
     void initUseCase() {
-        fuelCounterUpper = new FuelCounterUpper();
+        fuelCounterUpper = new FuelCounterUpperPart2();
     }
 
     @Test
