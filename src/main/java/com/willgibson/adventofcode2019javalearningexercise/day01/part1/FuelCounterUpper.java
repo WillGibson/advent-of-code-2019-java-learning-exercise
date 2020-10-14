@@ -1,5 +1,6 @@
 package com.willgibson.adventofcode2019javalearningexercise.day01.part1;
 
+import com.willgibson.adventofcode2019javalearningexercise.common.input.FromTextFile;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.boot.CommandLineRunner;
@@ -7,9 +8,7 @@ import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 import java.io.FileNotFoundException;
-import java.io.FileReader;
 import java.util.Arrays;
-import java.util.Scanner;
 
 @SpringBootApplication
 public class FuelCounterUpper implements CommandLineRunner {
@@ -22,23 +21,11 @@ public class FuelCounterUpper implements CommandLineRunner {
 
     @Override
     public void run(String... args) throws FileNotFoundException {
-        Scanner scanner = new Scanner(new FileReader(
+        FromTextFile fromTextFile = new FromTextFile();
+        int[] stars = fromTextFile.integerPerLineToArray(
             "src/main/java/com/willgibson/adventofcode2019javalearningexercise/day01/inputData.txt"
-        ));
-        int[] stars = putInputDataIntoArray(scanner, new int[]{});
+        );
         LOG.info("Day 01, Part 1 - The fuel required is " + calculate(stars));
-    }
-
-    // Todo: Refactor this spike to putFileLineDataIntoIntegerArray and test it
-    private int[] putInputDataIntoArray(Scanner scanner, int[] starsSoFar) {
-        if (!scanner.hasNext()) return starsSoFar;
-        else {
-            int numberOfStarsSoFar = starsSoFar.length;
-            int[] newStarsArray = new int[numberOfStarsSoFar + 1];
-            for (int i = 0; i < numberOfStarsSoFar; i++) newStarsArray[i] = starsSoFar[i];
-            newStarsArray[numberOfStarsSoFar] = scanner.nextInt();
-            return putInputDataIntoArray(scanner, newStarsArray);
-        }
     }
 
     public int calculate(int[] stars) {
