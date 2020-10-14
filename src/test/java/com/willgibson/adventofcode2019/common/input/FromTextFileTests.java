@@ -1,7 +1,8 @@
-package com.willgibson.adventofcode2019javalearningexercise.common.input;
+package com.willgibson.adventofcode2019.common.input;
 
 import org.junit.jupiter.api.Test;
 
+import java.io.File;
 import java.io.FileNotFoundException;
 
 import static org.assertj.core.api.Assertions.assertThat;
@@ -14,7 +15,7 @@ class FromTextFileTests {
         int[] expected = {12, 14, 1969, 100756};
 
         int[] actual = fromTextFile.integerPerLineToArray(
-            "src/test/java/com/willgibson/adventofcode2019javalearningexercise/common/input/assets/integerPerLineToArrayInputFile.txt"
+            "src/test/java/com/willgibson/adventofcode2019/common/input/assets/integerPerLineToArrayInputFile.txt"
         );
 
         assertThat(actual).isEqualTo(expected);

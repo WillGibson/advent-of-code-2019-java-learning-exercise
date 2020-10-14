@@ -1,4 +1,4 @@
-package com.willgibson.adventofcode2019javalearningexercise.common.input;
+package com.willgibson.adventofcode2019.common.input;
 
 import java.io.FileNotFoundException;
 import java.io.FileReader;

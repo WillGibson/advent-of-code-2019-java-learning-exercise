@@ -1,4 +1,4 @@
-package com.willgibson.adventofcode2019javalearningexercise.day01;
+package com.willgibson.adventofcode2019.day01;
 
 import java.util.Arrays;
 

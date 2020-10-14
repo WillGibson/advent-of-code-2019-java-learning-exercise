@@ -1,4 +1,4 @@
-package com.willgibson.adventofcode2019javalearningexercise.day01;
+package com.willgibson.adventofcode2019.day01;
 
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
@@ -33,8 +33,8 @@ class Day01Part2FuelCounterUpperPart2Tests {
     }
 
     @Test
-    void calculate_With14_1969_And_100756_Returns34241() {
+    void calculate_With14_1969_And_100756_Returns51314() {
         int[] stars = {14, 1969, 100756};
-        assertThat(fuelCounterUpper.calculate(stars)).isEqualTo(85555);
+        assertThat(fuelCounterUpper.calculate(stars)).isEqualTo(51314);
     }
 }
