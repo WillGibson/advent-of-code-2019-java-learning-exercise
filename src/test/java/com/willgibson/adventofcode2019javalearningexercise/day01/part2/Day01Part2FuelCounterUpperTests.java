@@ -1,6 +1,5 @@
 package com.willgibson.adventofcode2019javalearningexercise.day01.part2;
 
-import com.willgibson.adventofcode2019javalearningexercise.day01.part1.FuelCounterUpper;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
@@ -8,17 +7,11 @@ import static org.assertj.core.api.Assertions.assertThat;
 
 class Day01Part2FuelCounterUpperTests {
 
-    private com.willgibson.adventofcode2019javalearningexercise.day01.part1.FuelCounterUpper fuelCounterUpper;
+    private FuelCounterUpper fuelCounterUpper;
 
     @BeforeEach
     void initUseCase() {
         fuelCounterUpper = new FuelCounterUpper();
-    }
-
-    @Test
-    void calculate_With12_Returns2() {
-        int[] stars = {12};
-        assertThat(fuelCounterUpper.calculate(stars)).isEqualTo(2);
     }
 
     @Test
@@ -28,20 +21,20 @@ class Day01Part2FuelCounterUpperTests {
     }
 
     @Test
-    void calculate_With1969_Returns654() {
+    void calculate_With1969_Returns966() {
         int[] stars = {1969};
-        assertThat(fuelCounterUpper.calculate(stars)).isEqualTo(654);
+        assertThat(fuelCounterUpper.calculate(stars)).isEqualTo(966);
     }
 
     @Test
-    void calculate_With100756_Returns33583() {
+    void calculate_With100756_Returns50346() {
         int[] stars = {100756};
-        assertThat(fuelCounterUpper.calculate(stars)).isEqualTo(33583);
+        assertThat(fuelCounterUpper.calculate(stars)).isEqualTo(50346);
     }
 
     @Test
-    void calculate_With12_14_1969_And_100756_Returns34241() {
-        int[] stars = {12, 14, 1969, 100756};
-        assertThat(fuelCounterUpper.calculate(stars)).isEqualTo(34241);
+    void calculate_With14_1969_And_100756_Returns34241() {
+        int[] stars = {14, 1969, 100756};
+        assertThat(fuelCounterUpper.calculate(stars)).isEqualTo(85555);
     }
 }
