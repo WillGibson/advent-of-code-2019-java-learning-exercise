@@ -1,5 +1,6 @@
 package com.willgibson.adventofcode2019.common.input;
 
+import com.willgibson.adventofcode2019.Config;
 import org.junit.jupiter.api.Test;
 
 import java.io.FileNotFoundException;
@@ -14,7 +15,7 @@ class FromTextFileTests {
         int[] expected = {12, 14, 1969, 100756};
 
         int[] actual = fromTextFile.integerPerLineToArray(
-            "src/test/java/com/willgibson/adventofcode2019/common/input/assets/integerPerLineToArrayInputFile.txt"
+            Config.pathToTestBasePackage + "common/input/assets/integerPerLineToArrayInputFile.txt"
         );
 
         assertThat(actual).isEqualTo(expected);
