@@ -2,7 +2,6 @@ package com.willgibson.adventofcode2019.common.input;
 
 import org.junit.jupiter.api.Test;
 
-import java.io.File;
 import java.io.FileNotFoundException;
 
 import static org.assertj.core.api.Assertions.assertThat;
