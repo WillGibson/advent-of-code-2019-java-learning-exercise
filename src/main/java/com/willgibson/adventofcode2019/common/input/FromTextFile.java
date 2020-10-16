@@ -2,6 +2,9 @@ package com.willgibson.adventofcode2019.common.input;
 
 import java.io.FileNotFoundException;
 import java.io.FileReader;
+import java.io.IOException;
+import java.nio.file.Files;
+import java.nio.file.Path;
 import java.util.Scanner;
 
 
@@ -10,6 +13,10 @@ public class FromTextFile {
     public int[] integerPerLineToArray(String filePath) throws FileNotFoundException {
         Scanner scanner = new Scanner(new FileReader(filePath));
         return putLineDataIntoArray(scanner, new int[]{});
+    }
+
+    public String contentToString(String filePath) throws IOException {
+        return Files.readString(Path.of(filePath)).trim();
     }
 
     private int[] putLineDataIntoArray(Scanner scanner, int[] arraySoFar) {
