@@ -12,25 +12,26 @@ public class IntCodeComputerPart2 {
 
     private static final List<Integer> allowedOpcodes = Arrays.asList(addCode, exitCode, multiplyCode);
 
+    private int[] memory;
+
     public String run(String commandString) throws Exception {
-        int[] commands = Arrays.stream(commandString.split(",")).mapToInt(Integer::parseInt).toArray();
-        int[] processedCommands = this.process(commands, 0);
-        return Arrays.stream(processedCommands)
+        memory = Arrays.stream(commandString.split(",")).mapToInt(Integer::parseInt).toArray();
+        this.process(0);
+        return Arrays.stream(memory)
             .mapToObj(String::valueOf)
             .collect(Collectors.joining(","));
     }
 
-    private int[] process(int[] commands, int pointer) throws Exception {
-        int opcode = commands[pointer];
+    private void process(int instructionPointer) throws Exception {
+        int opcode = memory[instructionPointer];
         if (!allowedOpcodes.contains(opcode)) throw new Exception("Unknown opcode");
         if (opcode != exitCode) {
-            int targetElement = commands[pointer + 3];
-            int value1 = commands[commands[pointer + 1]];
-            int value2 = commands[commands[pointer + 2]];
-            if (opcode == addCode) commands[targetElement] = value1 + value2;
-            else commands[targetElement] = value1 * value2;
-            process(commands, pointer + 4);
+            int targetAddress = memory[instructionPointer + 3];
+            int value1 = memory[memory[instructionPointer + 1]];
+            int value2 = memory[memory[instructionPointer + 2]];
+            if (opcode == addCode) memory[targetAddress] = value1 + value2;
+            else memory[targetAddress] = value1 * value2;
+            process(instructionPointer + 4);
         }
-        return commands;
     }
 }
