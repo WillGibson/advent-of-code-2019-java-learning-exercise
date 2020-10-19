@@ -5,6 +5,7 @@ import com.willgibson.adventofcode2019.common.input.FromTextFile;
 import com.willgibson.adventofcode2019.day01.FuelCounterUpperPart1;
 import com.willgibson.adventofcode2019.day01.FuelCounterUpperPart2;
 import com.willgibson.adventofcode2019.day02.IntCodeComputerPart1;
+import com.willgibson.adventofcode2019.day02.IntCodeComputerPart2;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.boot.CommandLineRunner;
@@ -39,6 +40,7 @@ public class Main implements CommandLineRunner {
 
     private void day02() throws Exception {
         final IntCodeComputerPart1 intCodeComputer1 = new IntCodeComputerPart1();
+        final IntCodeComputerPart2 intCodeComputer2 = new IntCodeComputerPart2();
         final String commandString = fromTextFile.contentToString(Config.pathToBasePackage + "day02/input.txt");
         // Restore commandString to "1202 program alarm" state - l'il bit manual...
         final String[] commandsArray = commandString.split(",");
@@ -46,5 +48,6 @@ public class Main implements CommandLineRunner {
         commandsArray[2] = "2";
         final String restoredCommands = String.join(",", commandsArray);
         log.info("Day 02, Part 1 - The value at position 0 is " + intCodeComputer1.run(restoredCommands).split(",")[0]);
+        log.info("Day 02, Part 2 - The value at position 0 is " + intCodeComputer2.run(restoredCommands).split(",")[0]);
     }
 }
