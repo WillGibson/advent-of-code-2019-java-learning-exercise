@@ -46,8 +46,11 @@ public class Main implements CommandLineRunner {
         final String[] commandsArray = commandString.split(",");
         commandsArray[1] = "12";
         commandsArray[2] = "2";
-        final String restoredCommands = String.join(",", commandsArray);
-        log.info("Day 02, Part 1 - The value at position 0 is " + intCodeComputer1.run(restoredCommands).split(",")[0]);
-        log.info("Day 02, Part 2 - The value at position 0 is " + intCodeComputer2.run(restoredCommands).split(",")[0]);
+        final String restoredCommands1 = String.join(",", commandsArray);
+        log.info("Day 02, Part 1 - The value at position 0 is " + intCodeComputer1.run(restoredCommands1).split(",")[0]);
+        commandsArray[1] = "120";
+        commandsArray[2] = "2";
+        final String restoredCommands2 = String.join(",", commandsArray);
+        log.info("Day 02, Part 2 - The value at position 0 is " + intCodeComputer2.run(restoredCommands2).split(",")[0]);
     }
 }
