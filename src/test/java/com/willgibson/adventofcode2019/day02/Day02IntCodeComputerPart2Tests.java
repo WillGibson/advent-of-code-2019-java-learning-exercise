@@ -1,9 +1,11 @@
 package com.willgibson.adventofcode2019.day02;
 
+import com.github.javafaker.Faker;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
 import static org.assertj.core.api.Assertions.assertThat;
+import static org.junit.jupiter.api.Assertions.assertThrows;
 
 public class Day02IntCodeComputerPart2Tests {
 
@@ -14,7 +16,17 @@ public class Day02IntCodeComputerPart2Tests {
         intCodeComputer = new IntCodeComputerPart2();
     }
 
-    // Todo: Test for exception
+    @Test
+    void run_WithInvalidOpcode_ThrowsException() throws Exception {
+        Faker faker = new Faker();
+        String input = faker.number().numberBetween(3, 98) + ",0,0,0,99";
+
+        Exception exception = assertThrows(Exception.class, () -> {
+            intCodeComputer.run(input);
+        });
+
+        assertThat(exception.getMessage()).isEqualTo("Unknown opcode");
+    }
 
     @Test
     void run_With1_0_0_0_99_Returns2_0_0_0_99() throws Exception {
