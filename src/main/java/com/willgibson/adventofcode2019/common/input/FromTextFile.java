@@ -7,7 +7,6 @@ import java.nio.file.Files;
 import java.nio.file.Path;
 import java.util.Scanner;
 
-
 public class FromTextFile {
 
     public int[] integerPerLineToArray(String filePath) throws FileNotFoundException {
