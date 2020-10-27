@@ -13,7 +13,6 @@ public class Day02NounAndVerbFinderTests {
 
     @BeforeEach
     void initUseCase() {
-        // Todo: Mock intCodeComputer
         intCodeComputer = new IntCodeComputerPart2();
         nounAndVerbFinder = new NounAndVerbFinder(intCodeComputer);
     }
