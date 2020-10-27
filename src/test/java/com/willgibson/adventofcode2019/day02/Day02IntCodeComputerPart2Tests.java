@@ -7,13 +7,13 @@ import org.junit.jupiter.api.Test;
 import static org.assertj.core.api.Assertions.assertThat;
 import static org.junit.jupiter.api.Assertions.assertThrows;
 
-public class Day02IntCodeComputerPart1Tests {
+public class Day02IntCodeComputerPart2Tests {
 
-    private IntCodeComputerPart1 intCodeComputer;
+    private IntCodeComputerPart2 intCodeComputer;
 
     @BeforeEach
     void initUseCase() {
-        intCodeComputer = new IntCodeComputerPart1();
+        intCodeComputer = new IntCodeComputerPart2();
     }
 
     @Test
