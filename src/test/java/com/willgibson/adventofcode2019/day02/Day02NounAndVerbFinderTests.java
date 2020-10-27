@@ -19,10 +19,21 @@ public class Day02NounAndVerbFinderTests {
     }
 
     @Test
-    void run_With1_0_0_3_2_3_11_0_99And3500_Returns9And10() throws Exception {
-        String commands = "1,0,0,3,2,3,11,0,99";
+    void run_With1_0_0_3_2_3_11_0_99_30_40_50And3500_Returns910() throws Exception {
+        String commands = "1,0,0,3,2,3,11,0,99,30,40,50";
         int target = 3500;
-        int expected = 9010;
+        int expected = 910;
+
+        int actual = nounAndVerbFinder.find(commands, target);
+
+        assertThat(actual).isEqualTo(expected);
+    }
+
+    @Test
+    void run_With1_0_0_3_2_3_11_0_99_30_40_50_1_1_1_1_1_1_1_1_1_1And2550_Returns1006() throws Exception {
+        String commands = "1,0,0,3,2,3,11,0,99,30,40,50,1,1,1,1,1,1,1,1,1,1";
+        int target = 1650;
+        int expected = 309;
 
         int actual = nounAndVerbFinder.find(commands, target);
 
