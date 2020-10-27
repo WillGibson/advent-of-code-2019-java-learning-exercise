@@ -15,10 +15,7 @@ public class NounAndVerbFinder {
     }
 
     private int attempt(String commands, int target, int noun, int verb) throws Exception {
-        final String[] commandsArray = commands.split(",");
-        commandsArray[1] = Integer.toString(noun);
-        commandsArray[2] = Integer.toString(verb);
-        final String updatedCommands = String.join(",", commandsArray);
+        final String updatedCommands = CommandPreparer.replaceNounAndVerb(commands, noun, verb);
         int result;
         try {
             result = Integer.parseInt(intCodeComputer.run(updatedCommands).split(",")[0]);

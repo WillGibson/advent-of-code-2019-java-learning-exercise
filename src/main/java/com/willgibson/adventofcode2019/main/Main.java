@@ -4,6 +4,7 @@ import com.willgibson.adventofcode2019.Config;
 import com.willgibson.adventofcode2019.common.input.FromTextFile;
 import com.willgibson.adventofcode2019.day01.FuelCounterUpperPart1;
 import com.willgibson.adventofcode2019.day01.FuelCounterUpperPart2;
+import com.willgibson.adventofcode2019.day02.CommandPreparer;
 import com.willgibson.adventofcode2019.day02.IntCodeComputerPart1;
 import com.willgibson.adventofcode2019.day02.IntCodeComputerPart2;
 import org.slf4j.Logger;
@@ -42,15 +43,9 @@ public class Main implements CommandLineRunner {
         final IntCodeComputerPart1 intCodeComputer1 = new IntCodeComputerPart1();
         final IntCodeComputerPart2 intCodeComputer2 = new IntCodeComputerPart2();
         final String commandString = fromTextFile.contentToString(Config.pathToBasePackage + "day02/input.txt");
-        // Restore commandString to "1202 program alarm" state - l'il bit manual...
-        final String[] commandsArray = commandString.split(",");
-        commandsArray[1] = "12";
-        commandsArray[2] = "2";
-        final String restoredCommands1 = String.join(",", commandsArray);
-        log.info("Day 02, Part 1 - The value at position 0 is " + intCodeComputer1.run(restoredCommands1).split(",")[0]);
-        commandsArray[1] = "120";
-        commandsArray[2] = "2";
-        final String restoredCommands2 = String.join(",", commandsArray);
-        log.info("Day 02, Part 2 - The value at position 0 is " + intCodeComputer2.run(restoredCommands2).split(",")[0]);
+        final String preparedCommands1 = CommandPreparer.replaceNounAndVerb(commandString, 12, 2);
+        log.info("Day 02, Part 1 - The value at position 0 is " + intCodeComputer1.run(preparedCommands1).split(",")[0]);
+        final String preparedCommands2 = CommandPreparer.replaceNounAndVerb(commandString, 120, 2);
+        log.info("Day 02, Part 2 - The value at position 0 is " + intCodeComputer2.run(preparedCommands2).split(",")[0]);
     }
 }
