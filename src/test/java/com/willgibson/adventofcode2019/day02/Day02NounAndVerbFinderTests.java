@@ -1,6 +1,5 @@
 package com.willgibson.adventofcode2019.day02;
 
-import com.github.javafaker.Faker;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
