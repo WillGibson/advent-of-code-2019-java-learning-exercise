@@ -1,6 +1,6 @@
 package com.willgibson.adventofcode2019.common.input;
 
-import com.willgibson.adventofcode2019.Config;
+import com.willgibson.adventofcode2019.config.Config;
 import org.junit.jupiter.api.Test;
 
 import java.io.FileNotFoundException;
