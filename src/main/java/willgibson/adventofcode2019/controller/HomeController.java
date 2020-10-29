@@ -10,10 +10,11 @@ public class HomeController {
 
     @GetMapping("/")
     public String home(
-        @RequestParam(name = "day", required = false, defaultValue = "allx") String day,
+        @RequestParam(name = "day", required = false, defaultValue = "all") String day,
         Model model
     ) {
-        model.addAttribute("day", day);
+        String headingSuffix = day.equals("all") ? "All Days" : "Day " + ("00" + day).substring(day.length());
+        model.addAttribute("headingSuffix", headingSuffix);
         return "home";
     }
 
