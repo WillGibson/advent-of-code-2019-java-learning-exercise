@@ -8,14 +8,19 @@
         <version>2.3.4.RELEASE</version>
         <relativePath/> <!-- lookup parent from repository -->
     </parent>
-    <groupId>com.willgibson</groupId>
+    <groupId>willgibson</groupId>
     <artifactId>advent-of-code-2019-java-learning-exercise</artifactId>
     <version>0.0.1</version>
     <name>advent-of-code-2019-java-learning-exercise</name>
     <description>Advent of Code 2019 - Java / Spring Boot</description>
 
     <properties>
+        <cucumber-java.version>6.8.0</cucumber-java.version>
+        <cucumber-junit.version>6.8.0</cucumber-junit.version>
+        <cucumber-spring.version>6.8.1</cucumber-spring.version>
         <java.version>11</java.version>
+        <javafaker.version>0.15</javafaker.version>
+        <spring-boot-starter-test.version>2.3.4.RELEASE</spring-boot-starter-test.version>
     </properties>
 
     <dependencies>
@@ -40,6 +45,7 @@
         <dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-test</artifactId>
+            <version>${spring-boot-starter-test.version}</version>
             <scope>test</scope>
             <exclusions>
                 <exclusion>
@@ -51,7 +57,26 @@
         <dependency>
             <groupId>com.github.javafaker</groupId>
             <artifactId>javafaker</artifactId>
-            <version>0.15</version>
+            <version>${javafaker.version}</version>
+            <scope>test</scope>
+        </dependency>
+        <dependency>
+            <groupId>io.cucumber</groupId>
+            <artifactId>cucumber-java</artifactId>
+            <version>${cucumber-java.version}</version>
+            <scope>test</scope>
+        </dependency>
+        <dependency>
+            <groupId>io.cucumber</groupId>
+            <artifactId>cucumber-junit</artifactId>
+            <version>${cucumber-junit.version}</version>
+            <scope>test</scope>
+        </dependency>
+        <dependency>
+            <groupId>io.cucumber</groupId>
+            <artifactId>cucumber-spring</artifactId>
+            <version>${cucumber-spring.version}</version>
+            <scope>test</scope>
         </dependency>
     </dependencies>
 
