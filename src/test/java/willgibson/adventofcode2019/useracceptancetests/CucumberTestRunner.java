@@ -1,4 +1,4 @@
-package io.cucumber.skeleton;
+package willgibson.adventofcode2019.useracceptancetests;
 
 import io.cucumber.junit.Cucumber;
 import io.cucumber.junit.CucumberOptions;
@@ -8,5 +8,5 @@ import org.junit.runner.RunWith;
 @RunWith(Cucumber.class)
 @CucumberOptions(plugin = {"pretty"})
 @CucumberContextConfiguration
-public class RunCucumberTest {
+public class CucumberTestRunner {
 }
