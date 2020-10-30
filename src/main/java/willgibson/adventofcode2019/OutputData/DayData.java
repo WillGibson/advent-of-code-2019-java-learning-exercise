@@ -12,7 +12,6 @@ import willgibson.adventofcode2019.day02.NounAndVerbFinder;
 
 import java.io.FileNotFoundException;
 import java.lang.reflect.InvocationTargetException;
-import java.lang.reflect.Method;
 
 public class DayData {
 
