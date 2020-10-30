@@ -67,7 +67,7 @@ public class DayData {
     }
 
     private void day02() throws Exception {
-        this.heading = "Day 2: 1202 Program Alarm";
+        this.heading = "Day 02: 1202 Program Alarm";
 
         final String commandString = fromTextFile.contentToString(Config.pathToBasePackage + "day02/input.txt");
 

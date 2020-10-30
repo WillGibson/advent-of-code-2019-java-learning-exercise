@@ -9,6 +9,7 @@ Feature: Getting the daily answers
   Scenario Outline: Viewing a specific day
     When I visit the home page for day "<dayInput>"
     Then the page heading is "Will's Advent Of Code 2019 Answers For Day <dayDisplay>"
+    And the answer is shown for day "<dayInput>"
     Examples:
       | dayInput | dayDisplay |
       | 01       | 01         |

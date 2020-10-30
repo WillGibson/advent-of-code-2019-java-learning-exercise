@@ -49,4 +49,11 @@ public class HomeSteps {
         assertThat(driver.findElement(By.cssSelector(".day01 dd.part1")).getText()).isNotEmpty();
 
     }
+
+    @And("the answer is shown for day {string}")
+    public void theAnswerIsShownForDay(String day) {
+        day = ("00" + day).substring(day.length());
+        assertThat(driver.findElement(By.cssSelector(".day" + day + " h2")).getText()).startsWith("Day " + day );
+        assertThat(driver.findElement(By.cssSelector(".day" + day + " dd.part1")).getText()).isNotEmpty();
+    }
 }
