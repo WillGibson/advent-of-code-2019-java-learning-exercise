@@ -8,6 +8,9 @@ import io.cucumber.java.en.When;
 import org.openqa.selenium.By;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
+import willgibson.adventofcode2019.OutputData.DayData;
+
+import java.util.stream.IntStream;
 
 import static org.assertj.core.api.Assertions.assertThat;
 
@@ -45,8 +48,12 @@ public class HomeSteps {
 
     @And("the answers are shown for days {int} to {int}")
     public void theAnswersAreShownForTheFollowingDaysTo(int startDay, int endDay) {
-        assertThat(driver.findElement(By.cssSelector(".day01 h2")).getText()).startsWith("Day 01");
-        assertThat(driver.findElement(By.cssSelector(".day01 dd.part1")).getText()).isNotEmpty();
+        IntStream.range(startDay, endDay + 1).forEachOrdered(dayInt -> {
+            String day = Integer.toString(dayInt);
+            day = ("00" + day).substring(day.length());
+            assertThat(driver.findElement(By.cssSelector(".day" + day + " h2")).getText()).startsWith("Day " + day);
+            assertThat(driver.findElement(By.cssSelector(".day" + day + " dd.part1")).getText()).isNotEmpty();
+        });
 
     }
 

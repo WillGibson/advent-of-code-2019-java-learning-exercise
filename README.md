@@ -10,8 +10,10 @@ I used the following:
 
 ## The exercises
 
-Run `mvn spring-boot:run` in your terminal, the answers will be in the console output.
+Run `mvn spring-boot:run` in your terminal the visit http://localhost:8080/?day=02 in your browser to see the answers.
 
 ## The tests
 
 Run `mvn test` in your terminal.
+
+N.B. This is not currently running the user acceptance tests, but they can be run from Intellij...

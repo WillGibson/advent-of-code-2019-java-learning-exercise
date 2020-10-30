@@ -6,7 +6,9 @@ Feature: Getting the daily answers
     Then the page heading is "Will's Advent Of Code 2019 Answers For All Days"
     And the answers are shown for days 1 to 2
 
-  Scenario Outline: Viewing a specific day
+  # Todo: Scenario for clicking through to a single day
+
+  Scenario Outline: Viewing a specific day directly
     When I visit the home page for day "<dayInput>"
     Then the page heading is "Will's Advent Of Code 2019 Answers For Day <dayDisplay>"
     And the answer is shown for day "<dayInput>"
