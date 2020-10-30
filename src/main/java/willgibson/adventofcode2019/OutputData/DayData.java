@@ -1,5 +1,6 @@
 package willgibson.adventofcode2019.OutputData;
 
+import lombok.Getter;
 import willgibson.adventofcode2019.common.input.FromTextFile;
 import willgibson.adventofcode2019.config.Config;
 import willgibson.adventofcode2019.day01.FuelCounterUpperPart1;
@@ -15,12 +16,11 @@ import java.lang.reflect.Method;
 
 public class DayData {
 
-    // Todo: Can we autowire the getters?
-    private String heading;
-    private String answerPart1;
-    private String answerPart2;
+    @Getter private String heading;
+    @Getter private String answerPart1;
+    @Getter private String answerPart2;
 
-    private final String day;
+    @Getter private final String day;
 
     // Todo: look at whether there's a service container to use for dependency injection
     private static final FromTextFile fromTextFile = new FromTextFile();
@@ -36,22 +36,6 @@ public class DayData {
             this.heading = "Error: Method not created for day " + this.day;
         }
         return this;
-    }
-
-    public String getAnswerPart1() {
-        return answerPart1;
-    }
-
-    public String getAnswerPart2() {
-        return answerPart2;
-    }
-
-    public String getHeading() {
-        return heading;
-    }
-
-    public String getDay() {
-        return day;
     }
 
     private void day01() throws FileNotFoundException {

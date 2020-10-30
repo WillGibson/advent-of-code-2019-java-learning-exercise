@@ -20,6 +20,7 @@
         <cucumber-spring.version>6.8.1</cucumber-spring.version>
         <java.version>11</java.version>
         <javafaker.version>0.15</javafaker.version>
+        <lombok.version>1.18.16</lombok.version>
         <selenium.version>3.141.59</selenium.version>
         <spring-boot-starter-test.version>2.3.4.RELEASE</spring-boot-starter-test.version>
     </properties>
@@ -89,6 +90,12 @@
             <groupId>org.seleniumhq.selenium</groupId>
             <artifactId>selenium-chrome-driver</artifactId>
             <version>${selenium.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>org.projectlombok</groupId>
+            <artifactId>lombok</artifactId>
+            <version>${lombok.version}</version>
+            <scope>provided</scope>
         </dependency>
     </dependencies>
 
