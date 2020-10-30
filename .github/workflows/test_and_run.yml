@@ -14,5 +14,4 @@ jobs:
                   java-version: 11
             - name: Test
               run: mvn test
-            - name: Run
-              run: mvn spring-boot:run
+            # Todo: Run Acceptance tests in here, separate from unit tests
