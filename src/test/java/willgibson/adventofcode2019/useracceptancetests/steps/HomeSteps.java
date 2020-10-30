@@ -2,13 +2,14 @@ package willgibson.adventofcode2019.useracceptancetests.steps;
 
 import io.cucumber.java.After;
 import io.cucumber.java.Before;
+import io.cucumber.java.en.And;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
 import org.openqa.selenium.By;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
 
-import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.assertj.core.api.Assertions.assertThat;
 
 public class HomeSteps {
 
@@ -39,6 +40,13 @@ public class HomeSteps {
 
     @Then("the page heading is {string}")
     public void iSeeInTheText(String needle) {
-        assertEquals(needle, driver.findElement(By.tagName("h1")).getText());
+        assertThat(driver.findElement(By.tagName("h1")).getText()).isEqualTo(needle);
+    }
+
+    @And("the answers are shown for days {int} to {int}")
+    public void theAnswersAreShownForTheFollowingDaysTo(int startDay, int endDay) {
+        assertThat(driver.findElement(By.cssSelector(".day01 h2")).getText()).startsWith("Day 01");
+        assertThat(driver.findElement(By.cssSelector(".day01 dd.part1")).getText()).isNotEmpty();
+
     }
 }
